@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            
+            body{
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container{
+                height: 60vh;
+                background: #29C2F1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+            }
+            img{
+                height: 100%;
+                width: 98%;
+            }
+            #login{
+                width: 50%;
+                float: right;
+                display: flex;
+                gap:25px;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            .input{
+                display: flex;
+                flex-direction: column;
+            }
+            .error{
+                width: 100%;
+                height: 20px;
+                background: red;
+                color: white;
+                padding: 0.4em;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="together">
+            <div class="error" id="error">
+                Incorrect username/ password!
+            </div>
+            <div class="container">
+                <div class="login_img">
+                    <image src="https://media.istockphoto.com/vectors/online-doctor-concept-vector-id1169286607?k=20&m=1169286607&s=612x612&w=0&h=JjafKi3oky-tB7VtrDDoXFGQvhamLoraMtNW7lxnfBI=">
+                </div>
+                <form id="login" method="post" action="verifylogin">
+                    <h1>Welcome</h1>
+                    <div class="input">
+                        <label>Username:</label><input type="text" name="username" required>
+                    </div>
+                    <div class="input">
+                        <label>Password:</label><input type="password" name="password" required>
+                    </div>
+                    <button type="submit" onclick="showerror()" value="Login" style="width: 5em;">Login</button>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script>
+        function showerror(){
+                document.getElementById("error").style.display="block";
+                var timer=setTimeout(function(){
+                    document.getElementById("error").style.display="none";
+                },5000);
+            }
+    </script>
+</html>
