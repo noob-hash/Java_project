@@ -27,14 +27,16 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-Drop Database if exists `hospital`
+Drop Database if exists `hospital`;
 
-Create Database `hospital`
+Create Database `hospital`;
+
+USE `hospital`;
 
 CREATE TABLE `admin` (
   `username` varchar(100) NOT NULL,
   `password_` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Dumping data for table `admin`
@@ -52,7 +54,7 @@ INSERT INTO `admin` (`username`, `password_`) VALUES
 CREATE TABLE `audit` (
   `DOI` date NOT NULL,
   `data` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Dumping data for table `audit`
@@ -210,7 +212,7 @@ INSERT INTO `audit` (`DOI`, `data`) VALUES
 CREATE TABLE `department` (
   `dep_id` int(6) NOT NULL,
   `dep_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Dumping data for table `department`
@@ -234,7 +236,7 @@ INSERT INTO `department` (`dep_id`, `dep_name`) VALUES
 CREATE TABLE `dep_allocation` (
   `depId` int(6) NOT NULL,
   `docId` int(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 -- --------------------------------------------------------
 
@@ -248,7 +250,7 @@ CREATE TABLE `doctor` (
   `phone` varchar(10) NOT NULL,
   `qualification` varchar(50) NOT NULL,
   `department_id` int(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Dumping data for table `doctor`
@@ -269,7 +271,7 @@ INSERT INTO `doctor` (`doctor_id`, `doc_name`, `phone`, `qualification`, `depart
 CREATE TABLE `doctor_login` (
   `doctor_id` int(4) DEFAULT NULL,
   `password_hash` varchar(256) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Dumping data for table `doctor_login`
@@ -297,7 +299,7 @@ CREATE TABLE `patient` (
   `appoinment_time` time NOT NULL,
   `department` varchar(100) NOT NULL,
   `doctor` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Dumping data for table `patient`
@@ -347,7 +349,7 @@ CREATE TABLE `patient_data` (
   `contact` varchar(10) NOT NULL,
   `blood_group` varchar(4) DEFAULT NULL,
   `allergy` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Dumping data for table `patient_data`
@@ -377,7 +379,7 @@ CREATE TABLE `patient_info` (
   `diagnosis` varchar(300) DEFAULT NULL,
   `treatment` varchar(300) DEFAULT NULL,
   `medicines` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Dumping data for table `patient_info`
