@@ -27,6 +27,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
+Drop Database if exists `hospital`
+
+Create Database `hospital`
+
 CREATE TABLE `admin` (
   `username` varchar(100) NOT NULL,
   `password_` varchar(100) NOT NULL
